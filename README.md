@@ -50,7 +50,17 @@ yarn add react-native-zoom-image react-native-hero react-native-confetti-view
 
 yarn add react-native-gravatar react-native-map-link react-native-device-info
 
-yarn add  react-native-google-analytics-bridge react-native-fbsdk react-native-firebase
+yarn add  react-native-google-analytics-bridge react-native-firebase
+```
+
+### Install FacebookSDK
+
+```bash
+$ react-native install react-native-fbsdk
+$ npm view react-native version
+$ yarn rlink
+$ curl -O https://raw.githubusercontent.com/facebook/react-native-fbsdk/master/bin/ios_setup.js
+$ node ios_setup.js 12245689998766 "AppGestor"
 ```
 
 ### .babelrc
