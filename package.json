@@ -1,0 +1,25 @@
+{
+  "name": "kreat-native",
+  "version": "1.0.0",
+  "description": "Personal helpers for developping apps with react-native",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kikoseijo/kreat-native.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "mobile",
+    "apps"
+  ],
+  "author": "Kiko Seijo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kikoseijo/kreat-native/issues"
+  },
+  "homepage": "https://github.com/kikoseijo/kreat-native#readme"
+}
