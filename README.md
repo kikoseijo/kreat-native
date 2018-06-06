@@ -59,6 +59,7 @@ yarn add  react-native-google-analytics-bridge react-native-fbsdk react-native-f
 {
   "presets": ["react-native"],
   "plugins": [
+    "transform-decorators-legacy",
     "relay",
     [
       "module-resolver",
