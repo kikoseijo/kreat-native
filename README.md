@@ -1,5 +1,14 @@
 # Installation boilerplate
 
+### @flow, Decorators y module resolver
+
+```bash
+yarn add flow-bin@^0.XX.0 # use .flowconfig version number,.
+yarn add babel-plugin-transform-decorators-legacy babel-plugin-module-resolver
+```
+
+see bellow for [.babelrc](#.babelrc) configuration example.
+
 ### Relay
 
 ```bash
@@ -61,6 +70,62 @@ $ npm view react-native version
 $ yarn rlink
 $ curl -O https://raw.githubusercontent.com/facebook/react-native-fbsdk/master/bin/ios_setup.js
 $ node ios_setup.js 12245689998766 "AppGestor"
+```
+
+### Firebase with no POD
+
+Drag "Firebase" into Project -> Frameworks/Firebase select the **Create groups** options, folder will go yellow, (not blue).
+
+```
+<key>IS_ADS_ENABLED</key>
+<false/>
+<key>IS_ANALYTICS_ENABLED</key>
+<false/>
+<key>IS_APPINVITE_ENABLED</key>
+<false/>
+<key>IS_GCM_ENABLED</key>
+<false/>
+<key>IS_SIGNIN_ENABLED</key>
+<false/>
+```
+
+AppDelegate.m
+
+```
+#import "Firebase.h"
+#import "RNFirebaseNotifications.h"
+#import "RNFirebaseMessaging.h"
+
+  ...
+  NSURL *jsCodeLocation;
+
+  [FIRApp configure];
+  [RNFirebaseNotifications configure];
+
+  jsCodeLocation = ...
+
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+  [[RNFirebaseNotifications instance] didReceiveLocalNotification:notification];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo
+fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler{
+  [[RNFirebaseNotifications instance] didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+  [[RNFirebaseMessaging instance] didRegisterUserNotificationSettings:notificationSettings];
+}
+```
+
+Info.plist
+
+```
+<key>UIBackgroundModes</key>
+<array>
+  <string>remote-notification</string>
+</array>
 ```
 
 ### .babelrc
