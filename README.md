@@ -20,7 +20,7 @@ yarn add --dev relay-compiler graphql
 ### schema.graphql
 
 ```bash
-$ touch schema.graphql
+touch schema.graphql
 ```
 
 ```graphql
@@ -28,6 +28,12 @@ $ touch schema.graphql
 # timestamp: Wed Jun 06 2018 15:19:42 GMT+0200 (CEST)
 
 scalar DateTime
+```
+
+### Shoutem ui + theme
+
+```bash
+yarn add @shoutem/ui @shoutem/theme
 ```
 
 ### Package
