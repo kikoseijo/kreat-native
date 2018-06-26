@@ -7,7 +7,7 @@ yarn add flow-bin@^0.XX.0 # use .flowconfig version number,.
 yarn add babel-plugin-transform-decorators-legacy babel-plugin-module-resolver
 ```
 
-see bellow for [.babelrc](#.babelrc) configuration example.
+see bellow for [.babelrc](#babelrc) configuration example.
 
 ### Relay
 
@@ -15,7 +15,19 @@ see bellow for [.babelrc](#.babelrc) configuration example.
 yarn add react react-dom react-relay react-test-renderer react-relay-network-modern
 yarn add --dev babel-plugin-relay graphql
 yarn add --dev relay-compiler graphql
-touch schema.graphql
+```
+
+### schema.graphql
+
+```bash
+$ touch schema.graphql
+```
+
+```graphql
+# source: http://appgestor.test/v1/graphql
+# timestamp: Wed Jun 06 2018 15:19:42 GMT+0200 (CEST)
+
+scalar DateTime
 ```
 
 ### Package
